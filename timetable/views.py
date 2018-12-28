@@ -9,7 +9,7 @@ import datetime
 
 class TableView(APIView):
 
-    def get(self, requests, name):
+    def get(self, requests):
         '''
         获取课表
         :param requests:
@@ -17,12 +17,8 @@ class TableView(APIView):
         :return:
         '''
         weekday = datetime.datetime.now().weekday() + 1
-        tableList = Table.objects.filter(
-            who=name,
-            week=weekday
-        )
+        tableList = Table.objects.filter(week=weekday)
         tableResult = [model_to_dict(table) for table in tableList]
-
         return JsonResponse({
             'tableList': tableResult
         })

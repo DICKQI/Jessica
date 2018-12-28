@@ -19,5 +19,5 @@ from timetable.views import TableView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('table/<str:name>/', TableView.as_view())
+    path('table/', TableView.as_view())
 ]

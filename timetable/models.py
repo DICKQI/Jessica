@@ -6,9 +6,9 @@ class Table(models.Model):
     '''课表数据库模型'''
 
     Single_or_double_choice = {
-        ('s', '单周'),
-        ('d', '双周'),
-        ('sd', '单双周')
+        ('单周', '单周'),
+        ('双周', '双周'),
+        ('单双周', '单双周')
     }
 
     people = {
@@ -20,7 +20,7 @@ class Table(models.Model):
 
     classname = models.CharField(verbose_name='课程名称', default='', max_length=100)
 
-    single_or_double = models.CharField(verbose_name='单双周', default='s', choices=Single_or_double_choice, max_length=2)
+    single_or_double = models.CharField(verbose_name='单双周', default='s', choices=Single_or_double_choice, max_length=3)
 
     beginWeek = models.CharField(verbose_name='起始周', default='', max_length=100)
 
@@ -35,6 +35,8 @@ class Table(models.Model):
     classroom = models.CharField(verbose_name='教室', default='', max_length=100)
 
     teacher = models.CharField(verbose_name='老师名称', default='', max_length=100)
+
+    ege = models.CharField(verbose_name='彩蛋', default='', max_length=100)
 
     def __str__(self):
         return self.classname
