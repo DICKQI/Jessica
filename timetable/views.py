@@ -20,5 +20,6 @@ class TableView(APIView):
         tableList = Table.objects.filter(week=weekday)
         tableResult = [model_to_dict(table) for table in tableList]
         return JsonResponse({
+            'week': weekday,
             'tableList': tableResult
         })
