@@ -168,12 +168,7 @@ CORS_ALLOW_HEADERS = (
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.0/topics/i18n/
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
-# 配置静态文件目录
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'common_static'),
-]
+
 
 LANGUAGE_CODE = 'zh-hans'
 
@@ -190,3 +185,8 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+# 配置静态文件目录
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'common_static'),
+]

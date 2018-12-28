@@ -36,7 +36,7 @@ class Table(models.Model):
 
     teacher = models.CharField(verbose_name='老师名称', default='', max_length=100)
 
-    ege = models.CharField(verbose_name='彩蛋', default='', max_length=100)
+    ege = models.CharField(verbose_name='彩蛋', default='', max_length=100, blank=True)
 
     def __str__(self):
         return self.classname
