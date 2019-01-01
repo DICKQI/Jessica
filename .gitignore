@@ -2,3 +2,4 @@
 __pycache__
 timetable/migrations
 static
+apps/timetable/migrations

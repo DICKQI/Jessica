@@ -1,7 +1,6 @@
-from django.shortcuts import render
 from django.forms import model_to_dict
 from rest_framework.views import APIView
-from timetable.models import Table
+from apps.timetable.models import Table
 from django.http import JsonResponse
 import datetime
 

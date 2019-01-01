@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from timetable.views import TableView
+from apps.timetable.views.TableInfo import TableView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
