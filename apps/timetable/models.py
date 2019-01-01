@@ -45,7 +45,7 @@ class Table(models.Model):
 
     semester = models.CharField(verbose_name='学期', blank=False, default='大二第二学期', choices=semester_choice, max_length=100)
 
-    eeg = models.CharField(verbose_name='彩蛋', default='', max_length=100, blank=True)
+    egg = models.CharField(verbose_name='彩蛋', default='', max_length=100, blank=True)
 
     def __str__(self):
         return self.classname
