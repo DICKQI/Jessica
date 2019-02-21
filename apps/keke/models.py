@@ -1,8 +1,7 @@
 from django.db import models
 
 # Create your models here.
-
-class Table(models.Model):
+class kkTable(models.Model):
     '''课表数据库模型'''
 
     Single_or_double_choice = {
@@ -10,20 +9,6 @@ class Table(models.Model):
         ('双周', '双周'),
         ('单双周', '单双周')
     }
-
-    people = {
-        ('d', '科科'),
-        ('j', '熙熙')
-    }
-
-    semester_choice = {
-        ('大二第一学期', '大二第一学期'),
-        ('大二第二学期', '大二第二学期'),
-        ('大三第一学期', '大三第二学期'),
-        ('大三第二学期', '大三第二学期')
-    }
-
-    who = models.CharField(verbose_name='人', default='d', max_length=2, choices=people)
 
     classname = models.CharField(verbose_name='课程名称', default='', max_length=100)
 
@@ -43,8 +28,6 @@ class Table(models.Model):
 
     teacher = models.CharField(verbose_name='老师名称', default='', max_length=100)
 
-    semester = models.CharField(verbose_name='学期', blank=False, default='大二第二学期', choices=semester_choice, max_length=100)
-
     egg = models.CharField(verbose_name='彩蛋', default='', max_length=100, blank=True)
 
     def __str__(self):
@@ -54,8 +37,4 @@ class Table(models.Model):
         verbose_name = '课表'
         verbose_name_plural = verbose_name + '列表'
         ordering = ['beginTime']
-        db_table = 'timetable'
-
-
-
-
+        db_table = 'kktimetable'
