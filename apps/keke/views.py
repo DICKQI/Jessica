@@ -9,8 +9,8 @@ import datetime
 class kekeView(APIView):
     def get(self, requests):
         weekday = datetime.datetime.now().weekday() + 1
-        keke = kkTable.objects.filter(week=weekday)
-        xixi = xxTable.objects.filter(week=weekday)
+        keke = kkTable.objects.filter(week=weekday).order_by('beginTime', 'endTime')
+        xixi = xxTable.objects.filter(week=weekday).order_by('beginTime', 'endTime')
         return JsonResponse({
             'keke':[model_to_dict(kk) for kk in keke],
             'xixi':[model_to_dict(xx) for xx in xixi],
